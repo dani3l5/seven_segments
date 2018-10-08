@@ -35,3 +35,6 @@ for k, v in longest_acceptable.items():
 
 #Prints the final result
 print(longest_words)
+
+#Closes the file
+file.close()

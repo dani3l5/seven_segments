@@ -12,8 +12,8 @@ banned = re.compile("[gkmqvwxzio]")
 longest_acceptable = {'a': 1}
 
 #Iterates through all words and adds them to the
-#dictionary if there are no banned words in them
-#and it they aren't smaller than the biggest word.
+#dictionary if there are no banned letters in them
+#and if they aren't smaller than the biggest word.
 for item in list:
     if banned.search(item) != None:
         continue

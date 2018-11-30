@@ -1,10 +1,10 @@
 #Imports regular expression module
 import re
 
-#Opens the word list and creates a list as a variable
+#Opens the word list and creates a list
 file = open('words.txt', 'r')
 file_content = file.read()
-list = file_content.split('\n')
+word_list = file_content.split('\n')
 
 #Specifies the banned words in a regex
 banned = re.compile("[gkmqvwxzio]")
@@ -14,7 +14,7 @@ longest_acceptable = {'a': 1}
 #Iterates through all words and adds them to the
 #dictionary if there are no banned letters in them
 #and if they aren't smaller than the biggest word.
-for item in list:
+for item in word_list:
     if banned.search(item) != None:
         continue
     elif len(item) < max(longest_acceptable.values()):
@@ -28,7 +28,7 @@ biggest = max(longest_acceptable.values())
 longest_words = ""
 
 #Iterates through dictionary and removes the words that
-#are not the longest that have crept thorugh the cracks.
+#are not the longest that have crept through the cracks.
 for k, v in longest_acceptable.items():
     if v == biggest:
         longest_words += k + '\n'
